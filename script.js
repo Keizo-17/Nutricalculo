@@ -13,30 +13,26 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
-/* UI */
+/* MOSTRAR */
 window.mostrarLogin = () => {
-  loginModal.classList.remove("oculto");
+  document.getElementById("loginModal").classList.remove("oculto");
 };
 
 window.mostrarRegistro = () => {
-  registroModal.classList.remove("oculto");
+  document.getElementById("registroModal").classList.remove("oculto");
 };
 
+/* CERRAR */
 window.cerrar = () => {
-  loginModal.classList.add("oculto");
-  registroModal.classList.add("oculto");
+  document.getElementById("loginModal").classList.add("oculto");
+  document.getElementById("registroModal").classList.add("oculto");
 };
 
 /* LOGIN */
 window.login = async () => {
   try {
-    await signInWithEmailAndPassword(
-      auth,
-      loginEmail.value,
-      loginPassword.value
-    );
-
-    location.href = "dashboard.html";
+    await signInWithEmailAndPassword(auth, loginEmail.value, loginPassword.value);
+    window.location.href = "dashboard.html";
   } catch (e) {
     alert("Error: " + e.message);
   }
@@ -51,7 +47,6 @@ window.registrar = async () => {
       registerPassword.value
     );
 
-    // guardar usuario
     await setDoc(doc(db, "usuarios", user.user.uid), {
       nombre: registerUser.value,
       email: registerEmail.value
@@ -59,7 +54,7 @@ window.registrar = async () => {
 
     alert("Cuenta creada ✅");
 
-    // ✅ REGRESA A PORTADA
+    // ✅ vuelve a pantalla principal
     cerrar();
 
   } catch (e) {
@@ -67,8 +62,8 @@ window.registrar = async () => {
   }
 };
 
-/* LOGOUT PARA USAR EN DASHBOARD */
+/* LOGOUT PARA DASHBOARD */
 window.cerrarSesion = async () => {
   await signOut(auth);
-  location.href = "index.html";
+  window.location.href = "index.html";
 };

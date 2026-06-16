@@ -4,29 +4,32 @@ body.portada {
   height: 100vh;
 
   background: linear-gradient(135deg, #0f172a, #1e40af);
+
   display: flex;
   justify-content: center;
   align-items: center;
+
   color: white;
 }
 
+/* CARD */
 .card {
+  text-align: center;
   background: rgba(255,255,255,0.05);
   padding: 40px;
   border-radius: 20px;
-  text-align: center;
-  width: 300px;
+  width: 320px;
 }
 
 /* LOGO */
 .logo {
-  width: 70px;
+  width: 80px;
   margin-bottom: 10px;
 }
 
 /* TITULO */
 h1 {
-  font-size: 35px;
+  font-size: 38px;
   margin: 10px 0;
 }
 
@@ -34,11 +37,12 @@ h1 {
 .btn {
   width: 100%;
   padding: 12px;
-  margin: 8px 0;
+  margin: 10px 0; /* ✅ separación real */
   border: none;
   border-radius: 10px;
   color: white;
   cursor: pointer;
+  font-size: 15px;
 }
 
 .verde {
@@ -59,22 +63,25 @@ h1 {
   background: #64748b;
 }
 
-/* MODAL */
+/* MODAL (SIN BLOQUEOS) */
 .modal {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+
   background: #1e293b;
   padding: 20px;
   border-radius: 10px;
-  width: 250px;
+  width: 280px;
+
+  z-index: 1000;
 }
 
 .modal input {
   width: 100%;
   padding: 10px;
-  margin: 6px 0;
+  margin: 8px 0;
 }
 
 .oculto {
