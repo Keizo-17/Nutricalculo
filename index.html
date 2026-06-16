@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NutriMetrics</title>
+
+<link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body class="portada-body">
+
+<div class="contenedor">
+
+  <div class="logo">NM</div>
+
+  <h1>NutriMetrics</h1>
+  <p>Sistema inteligente de gestión nutricional</p>
+
+  <button class="btn verde" onclick="mostrarLogin()">Iniciar sesión</button>
+  <button class="btn azul" onclick="mostrarRegistro()">Registrarse</button>
+
+</div>
+
+<!-- LOGIN -->
+<div id="loginModal" class="modal oculto">
+  <h2>Iniciar sesión</h2>
+
+  <input id="loginEmail" placeholder="Correo">
+  <input id="loginPassword" type="password" placeholder="Contraseña">
+
+  <button class="btn verde" onclick="login()">Entrar</button>
+  <button class="btn gris" onclick="cerrar()">Cancelar</button>
+
+</div>
+
+<!-- REGISTRO -->
+<div id="registroModal" class="modal oculto">
+  <h2>Registrar</h2>
+
+  <input id="registerUser" placeholder="Usuario">
+  <input id="registerEmail" placeholder="Correo">
+  <input id="registerPassword" type="password" placeholder="Contraseña">
+
+  <button class="btn azul" onclick="registrar()">Crear cuenta</button>
+  <button class="btn gris" onclick="cerrar()">Cancelar</button>
+
+</div>
+
+<script type="module" src="script.js"></script>
+
+</body>
+</html>
